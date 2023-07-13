@@ -1,5 +1,7 @@
 package br.com.beatrizguesser.car.service;
 
+import br.com.beatrizguesser.car.dto.CarDtoRequest;
+import br.com.beatrizguesser.car.dto.CarDtoResponse;
 import br.com.beatrizguesser.car.entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import br.com.beatrizguesser.car.repository.CarRepository;
@@ -11,13 +13,30 @@ public class CarService {
     @Autowired
     CarRepository carRepository;
 
-    public Car save(Car car) {
+    public void save(CarDtoRequest carDtoRequest) {
+
+        Car car = new Car(
+                null,
+                carDtoRequest.getName(),
+                carDtoRequest.getBrand(),
+                carDtoRequest.getColor(),
+                carDtoRequest.getFabricationYear());
+
         carRepository.save(car);
-        return car;
     }
 
-    public Car getById(Long idChassi) {
-        return carRepository.findById(idChassi).orElseThrow();
+    public CarDtoResponse getById(Long idChassi) {
+
+        Car car = carRepository.findById(idChassi).orElseThrow();
+
+        CarDtoResponse carDtoResponse = new CarDtoResponse(
+                car.getIdChassi(),
+                car.getName(),
+                car.getBrand(),
+                car.getColor(),
+                car.getFabricationYear());
+
+        return carDtoResponse;
     }
 
 }

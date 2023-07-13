@@ -1,5 +1,7 @@
 package br.com.beatrizguesser.car.controller;
 
+import br.com.beatrizguesser.car.dto.CarDtoRequest;
+import br.com.beatrizguesser.car.dto.CarDtoResponse;
 import br.com.beatrizguesser.car.entity.Car;
 import br.com.beatrizguesser.car.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +15,13 @@ public class CarController {
     CarService carService;
 
     @PostMapping("/post")
-    public Car post(@RequestBody Car car){
-        return carService.save(car);
+    public String postCar(@RequestBody CarDtoRequest carDtoRequest){
+        carService.save(carDtoRequest);
+        return "Car successfully saved!";
     }
 
     @GetMapping("/get/{idChassi}")
-    public Car post(@PathVariable Long idChassi){
+    public CarDtoResponse getCar(@PathVariable Long idChassi){
         return carService.getById(idChassi);
     }
 }
