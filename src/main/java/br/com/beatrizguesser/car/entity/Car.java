@@ -56,14 +56,4 @@ public class Car {
         this.fabricationYear = fabricationYear;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "idChassi=" + idChassi +
-                ", name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
-                ", color='" + color + '\'' +
-                ", fabricationYear='" + fabricationYear + '\'' +
-                '}';
-    }
 }

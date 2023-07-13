@@ -2,10 +2,9 @@ package br.com.beatrizguesser.car.controller;
 
 import br.com.beatrizguesser.car.dto.CarDtoRequest;
 import br.com.beatrizguesser.car.dto.CarDtoResponse;
-import br.com.beatrizguesser.car.entity.Car;
 import br.com.beatrizguesser.car.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+;import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/cars")
