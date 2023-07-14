@@ -1,7 +1,6 @@
 package br.com.beatrizguesser.car.dto;
 
 public class CarDtoRequest {
-
     private String name;
     private String brand;
     private String color;

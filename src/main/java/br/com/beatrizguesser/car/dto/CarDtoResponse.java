@@ -1,7 +1,6 @@
 package br.com.beatrizguesser.car.dto;
 
 public class CarDtoResponse {
-
     private Long idChassi;
     private String name;
     private String brand;
