@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CarService {
     @Autowired
-    CarRepository carRepository;
+    private CarRepository carRepository;
 
     public void save(CarDtoRequest carDtoRequest) {
         if (carDtoRequest.getName() == null || carDtoRequest.getBrand() == null || carDtoRequest.getColor() == null || carDtoRequest.getFabricationYear() == null) {
@@ -26,7 +26,7 @@ public class CarService {
                     carDtoRequest.getColor(),
                     carDtoRequest.getFabricationYear());
 
-            carRepository.save(car).toString();
+            carRepository.save(car);
         }
     }
 

@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api/cars")
+@RequestMapping(value = "/cars")
 public class CarController {
     @Autowired
-    CarService carService;
+    private CarService carService;
 
     @PostMapping("/post")
     public String postCar(@RequestBody CarDtoRequest carDtoRequest) {
